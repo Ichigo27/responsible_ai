@@ -1,0 +1,32 @@
+# LiteLLM model configurations
+
+
+# Default model to use
+default_model: "bedrock/claude-3-7-sonnet"
+
+
+# Provider configurations for LiteLLM
+providers:
+ bedrock:
+   profile_name: default  # AWS profile name to use (optional)
+   aws_region_name: "us-east-1"  # AWS region where Bedrock models are accessible
+
+
+# Model configurations with their specific parameters
+models:
+ bedrock/claude-3-5-haiku:
+   model: "bedrock/converse/us.anthropic.claude-3-5-haiku-20241022-v1:0"
+   max_tokens: 4096
+   temperature: 0
+ bedrock/claude-3-5-sonnet:
+   model: "bedrock/converse/us.anthropic.claude-3-5-sonnet-20241022-v2:0"
+   max_tokens: 4096
+   temperature: 0
+ bedrock/claude-3-7-sonnet:
+   model: "bedrock/converse/us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+   max_tokens: 4096
+   temperature: 0
+
+
+# Fallback model if primary is unavailable
+fallback_model: "bedrock/claude-3-5-sonnet"

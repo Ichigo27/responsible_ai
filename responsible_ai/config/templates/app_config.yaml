@@ -1,0 +1,65 @@
+# General application configuration settings
+
+
+# Basic application settings
+VERSION: "1.0.0"
+HOST: "0.0.0.0"
+PORT: 9500
+DEBUG: false
+ENVIRONMENT: "development"
+
+
+# API settings
+API_VERSION: "v1"
+
+
+# Logging settings
+LOG_LEVEL: "INFO"
+LOGS_DIR: "logs"
+LOG_FILE: "responsible_ai.log"
+LOG_TO_CONSOLE: false  # Whether to show logs in console
+
+
+# Security settings
+CORS_ENABLED: true
+CORS_ORIGINS: "*"
+
+
+# Parallel processing configuration
+ENABLE_PARALLEL_PROCESSING: true # Enable parallel processing
+MAX_BATCH_WORKERS: 10  # Maximum number of worker threads for batch processing
+MAX_METRIC_WORKERS: 5  # Maximum number of worker threads for metric processing
+
+
+# Timeout settings (in seconds)
+METRIC_RESULT_TIMEOUT: 300  # Timeout for individual metric evaluation (5 minutes)
+BATCH_ITEM_TIMEOUT: 600     # Timeout for individual batch item (10 minutes)
+BATCH_CHUNK_TIMEOUT: 1200   # Timeout for batch chunks (20 minutes)
+
+
+
+
+# LLM request handling
+MAX_RETRIES: 5
+RETRY_MIN_DELAY: 2
+RETRY_BACKOFF_FACTOR: 2.0 
+RETRY_MAX_DELAY: 120 
+
+
+# LLM concurrency settings
+LLM_MAX_CONCURRENT_REQUESTS: 50  # Maximum number of concurrent LLM requests
+LLM_SEMAPHORE_TIMEOUT: 600  # Timeout for acquiring semaphore (in seconds)
+
+
+# LLM operation timeouts (in seconds)
+LLM_OPERATION_TIMEOUT: 600  # Overall operation timeout (10 minutes)
+LLM_PROVIDER_TIMEOUT: 300   # Individual provider API call timeout (5 minutes)
+
+
+# Dashboard settings
+DASHBOARD:
+ ENABLED: true
+ DATASET_PATH: "data/dashboard"
+ HOST: "0.0.0.0"
+ PORT: 9501
+ AUTO_RELOAD: true
